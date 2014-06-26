@@ -38,7 +38,7 @@
           // only "name" is required
           editors:  [
               { name: "Hannes Tschofenig", url: "http://www.tschofenig.priv.at/",
-                company: "Nokia Siemens Networks", companyURL: "http://www.nokiasiemensnetworks.com/" },
+                company: "", companyURL: "" },
 		      { name: "Nick Doty", url: "http://npdoty.name/",
                 company: "W3C", companyURL: "http://w3.org/" },
           ],
@@ -328,9 +328,9 @@ Note that this document does not try to attempt to define the term 'privacy' its
 
 <p>The starting point for addressing privacy in the design of a protocol, in its implementation and the deployment is to acknowledge that there are potential privacy concerns. Documenting these concerns is an important step to develop a shared understanding is the prerequisite for deciding whether there are ways to mitigate these concerns, either with an alternative protocol design, guidance for implementers, or with recommendations for those who deploy the technology.</p>
 
-<p>Changing the underlying security and privacy baseline typically leads to modifications of the entire architecture. Consequently, it is wise to consider security as well as privacy early in the design process. With regard to the level of privacy and security investigations the goal is not to be exhaustive (such as by producing as much text as possible) but rather to capture the most important aspects. Unfortunately, security and privacy experts will often not be available in the early design phase since there are too few of them around. Hence, it is important to produce a writeup that allows those from the security and privacy community to quickly capture the main architectural spirit of the newly designed API feature, or protocol. It is too easy to get lost in details and feedback from external reviewers will ensure that potential concerns are identified early. Basic guidance on how to produce such high-level writeups is already available with [[RFC4101]].</p>
+<p>Changing the underlying security and privacy baseline typically leads to modifications of the entire architecture. Consequently, it is wise to consider security as well as privacy early in the design process. Often, specifications are extensions to an already defined communication architecture whereby many underlying design decisions have been made years ago already. In such a case it is highly valuable for non-protocol experts to have access to a high-level summary of the communication architecture the extension builds on. This simplifies a privacy assessment and to spot potential deviation from previously made assumptions. [[RFC4101]] offers suggerstions for writing such a protocol model.</p>
 
-<p>Since privacy builds on top of security proper security protection needs to be provided. In addition to the guidance for protocol designers provided in RFC 3552 for writing security consideration text the following questions are relevant.</p>
+<p>Since privacy builds on top of security proper security protection is assumed. In addition to the guidance for protocol designers provided in [[RFC3552]] for writing security consideration text the following questions are relevant.</p>
 
 <ul>
 <li>How do the protocol's security considerations prevent surveillance, including eavesdropping and traffic analysis?</li>
@@ -339,7 +339,7 @@ Note that this document does not try to attempt to define the term 'privacy' its
 <li>How do the protocol's mechanisms for identifying and/or authenticating individuals prevent misattribution?</li>
 </ul>
 
-<p>The guidance given below is not a hard rule but instead aims to make you think about your design. Not all items are equally applicable to all parties. For example, notice and consent is best realized by parties that implement and deploy software rather than by those who purely develop specifications since many deployments use non-standardized functionality for informing their user base about the privacy properties of their service and for obtaining the users consent before they are able to use the service. In other cases again, users are given the opportunity to make consent decisions in real-time during the communication interaction before sharing data.</p>
+<p>The guidance given below is not a hard rule but instead aims to make you think about your design. Not all items are equally applicable to all specifications and stakeholders involved in the implementation and deployment. For example, notice and consent is often best accomplished by parties that implement and deploy software rather than by those who write specifications since many deployments use non-standardized functionality for informing their user base about the privacy properties of their service and for obtaining the users consent before they are able to use the service. In other cases again, users are given the opportunity to convey their privacy preferences via protocol mechanisms or make consent decisions in real-time before data sharing takes place. This would clearly fall into the scope of technical specifications.</p>
 
 <h3>Data Minimisation</h3>
 
